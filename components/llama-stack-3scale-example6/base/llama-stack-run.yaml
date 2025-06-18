@@ -12,12 +12,10 @@ apis:
 - vector_io
 providers:
   inference:
-  - provider_id: vllm-inference
-    provider_type: remote::vllm
+  - provider_id: ollama
+    provider_type: remote::ollama
     config:
       url: ${env.OLLAMA_URL:http://localhost:8000/v1}
-      max_tokens: ${env.VLLM_MAX_TOKENS:4096}
-      api_token: ${env.OLLAMA_API_TOKEN:fake}
       tls_verify: false
   - provider_id: sentence-transformers
     provider_type: inline::sentence-transformers
